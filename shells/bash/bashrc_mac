@@ -1,0 +1,24 @@
+export PATH="${HOME}/bin:$PATH"
+
+if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
+fi
+if [ -f ${HOME}/bin/bash/git-completion.bash ]; then
+    . ${HOME}/bin/bash/git-completion.bash
+fi
+if [ -f ${HOME}/bin/bash/git-prompt.sh ]; then
+    . ${HOME}/bin/bash/git-prompt.sh
+fi
+
+# Prompt
+PS1='[MacLocal] \W\$ '
+if [ -f ${HOME}/bin/bash/git-prompt.sh ]; then
+    PS1='[MacLocal]$(__git_ps1 "(%s)") \W\$ '
+fi
+
+alias ls='ls -CF'
+alias grep='grep --color=auto'
+alias zgrep='zgrep --color=auto'
+
+alias cal="cal -y"
+
